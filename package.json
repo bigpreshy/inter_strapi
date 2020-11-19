@@ -1,0 +1,18 @@
+{
+  "name": "Interactive CLI api generator for strapi",
+  "version": "1.0.0",
+  "description": "interactive API generator for strapi projects",
+  "main": "src/first.js",
+  "scripts": {
+    "start": "nodemon src/first.js"
+  },
+  "dependencies": {
+    "commander": "6.2.0",
+    "fs-extra": "^9.0.1",
+    "inquirer": "7.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}
