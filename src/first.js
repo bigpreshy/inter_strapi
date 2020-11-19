@@ -52,7 +52,7 @@ inquirer.prompt(questions).then((answers) => {
       console.log("config created!");
 
       console.log(main.data.routes[2].path);
-      fse.outputFile("student.json", testing, (err) => {});
+     // fse.outputFile("student.json", testing, (err) => {});
     }
   });
 });

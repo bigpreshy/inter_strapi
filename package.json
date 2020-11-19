@@ -1,10 +1,10 @@
 {
-  "name": "Interactive CLI api generator for strapi",
+  "name": "inter_strapi",
   "version": "1.0.0",
-  "description": "interactive API generator for strapi projects",
+  "description": "An interactive CLI for generating API in strapi projects Yo!",
   "main": "src/first.js",
   "scripts": {
-    "start": "nodemon src/first.js"
+    "createapi": "node src/first.js"
   },
   "dependencies": {
     "commander": "6.2.0",
@@ -14,5 +14,14 @@
   "devDependencies": {
     "nodemon": "1.18.4"
   },
-  "keywords": []
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigpreshy/inter_strapi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigpreshy/inter_strapi/issues"
+  },
+  "homepage": "https://github.com/bigpreshy/inter_strapi#readme"
 }
