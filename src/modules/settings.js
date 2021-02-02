@@ -1,36 +1,14 @@
 exports.settings = {
-  kind: "collectionType",
-  collectionName: "bscinfoteches",
-  info: {
-    name: "name",
-    description: "All information info tech for bsc"
+  "collectionName": api.name,
+  "info": {
+    "name": api.name,
+    "description": ""
   },
-  options: {
-    increments: true,
-    timestamps: true,
-    draftAndPublish: false
+  "options": {
+    "draftAndPublish": false,
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
   },
-  attributes: {
-    code: {
-      type: "string"
-    },
-    title: {
-      type: "string"
-    },
-    unit: {
-      type: "string"
-    },
-    level: {
-      type: "string"
-    },
-    semester: {
-      type: "string"
-    },
-    status: {
-      type: "string"
-    },
-    fee: {
-      type: "integer"
-    }
-  }
-};
+  "attributes": {}
+}

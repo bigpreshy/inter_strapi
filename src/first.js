@@ -1,6 +1,8 @@
 var inquirer = require("inquirer");
 const fse = require("fs-extra");
-let markup = "modules/markup.js";
+
+
+//let controllermarkup = "modules/data.js";
 
 //const Added = require("index.js");
 var questions = [
@@ -10,17 +12,21 @@ var questions = [
     message: "What's your api folder name"
   }
 ];
-const main = require("./modules/data.js");
+
 inquirer.prompt(questions).then((answers) => {
-  let folder = answers.apiname;
+  let folder = 'api/' + answers.apiname;
   let config = folder + "/config/routes.json";
   let controllers = folder + "/controllers/" + answers.apiname + ".js";
   let models = folder + "/models/" + answers.apiname + ".js";
   let modelSettings = folder + "/models/" + answers.apiname + ".settings.json";
   let services = folder + "/services/" + answers.apiname + ".js";
 
+  const main = require("./modules/data.js");
+const markup = "./src/modules/markup.js";
+const setting = "./src/modules/settings.js";
+
   //Handlers /
-  main.data.routes[0].handler = answers.apiname + ".find";
+  main.data.routes[0].handler = answers.apiname + ".find"; 
   main.data.routes[1].handler = answers.apiname + ".count";
   main.data.routes[2].handler = answers.apiname + ".findOne";
   main.data.routes[3].handler = answers.apiname + ".create";
@@ -35,6 +41,10 @@ inquirer.prompt(questions).then((answers) => {
   main.data.routes[4].path = "/" + answers.apiname + "s/:id";
   main.data.routes[5].path = "/" + answers.apiname + "s/:id";
 
+
+ // setting.settings.collectionName = answers.apiname;
+  let Model = setting.settings;
+
   let testing = JSON.stringify(main.data);
 
   fse.ensureDir(folder, (err) => {
@@ -44,7 +54,7 @@ inquirer.prompt(questions).then((answers) => {
       fse.outputFile(config, testing, (err) => {});
       fse.outputFile(controllers, "", (err) => {});
       fse.outputFile(models, "", (err) => {});
-      fse.outputFile(modelSettings, "Hey there!", (err) => {});
+      fse.outputFile(modelSettings, Model, (err) => {});
       fse.outputFile(services, "", (err) => {});
       fse.copy(markup, controllers, (err) => {}); // copies file
       fse.copy(markup, models, (err) => {});
