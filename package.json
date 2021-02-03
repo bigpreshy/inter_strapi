@@ -1,6 +1,6 @@
 {
   "name": "inter_strapi",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "An interactive CLI for generating API in strapi projects Yo!",
   "main": "src/first.js",
   "scripts": {
