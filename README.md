@@ -7,7 +7,7 @@ This is an interactive CLI strapi API generator.
 
 
 
-    npm install inter_strapi
+    "npm install inter_strapi"
 
 
 
@@ -27,7 +27,7 @@ Just run
 
 
 
-    npm run createapi 
+    "npm run createapi" 
 
 
 in your root directory and watch it speak to you 😉
