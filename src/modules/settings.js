@@ -1,7 +1,9 @@
+
+
 exports.settings = {
-  "collectionName": api.name,
+  collectionName: "name",
   "info": {
-    "name": api.name,
+    name: "name",
     "description": ""
   },
   "options": {

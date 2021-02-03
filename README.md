@@ -4,7 +4,8 @@ This is an interactive CLI strapi API generator.
 
 ## How to Use
 - Install it through npm
-- 
+
+
     npm install inter_strapi
 
 

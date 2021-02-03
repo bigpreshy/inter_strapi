@@ -1,5 +1,7 @@
 var inquirer = require("inquirer");
 const fse = require("fs-extra");
+const main = require("./modules/data.js");
+const setting = require("./modules/settings.js");
 
 
 //let controllermarkup = "modules/data.js";
@@ -21,9 +23,9 @@ inquirer.prompt(questions).then((answers) => {
   let modelSettings = folder + "/models/" + answers.apiname + ".settings.json";
   let services = folder + "/services/" + answers.apiname + ".js";
 
-  const main = require("./modules/data.js");
+ 
 const markup = "./src/modules/markup.js";
-const setting = "./src/modules/settings.js";
+
 
   //Handlers /
   main.data.routes[0].handler = answers.apiname + ".find"; 
@@ -41,9 +43,12 @@ const setting = "./src/modules/settings.js";
   main.data.routes[4].path = "/" + answers.apiname + "s/:id";
   main.data.routes[5].path = "/" + answers.apiname + "s/:id";
 
-
- // setting.settings.collectionName = answers.apiname;
-  let Model = setting.settings;
+  
+ setting.settings.collectionName = answers.apiname + "s";
+ setting.settings.info.name = answers.apiname;
+  let Model = JSON.stringify(setting.settings);
+  //Model.split(",").join("\n")
+ // console.log(Model);
 
   let testing = JSON.stringify(main.data);
 
@@ -59,9 +64,9 @@ const setting = "./src/modules/settings.js";
       fse.copy(markup, controllers, (err) => {}); // copies file
       fse.copy(markup, models, (err) => {});
       fse.copy(markup, services, (err) => {});
-      console.log("config created!");
+      console.log("You have successfully created " + answers.apiname + "api structure");
 
-      console.log(main.data.routes[2].path);
+      ///console.log(main.data.routes[2].path);
      // fse.outputFile("student.json", testing, (err) => {});
     }
   });
